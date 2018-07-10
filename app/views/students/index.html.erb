@@ -1,4 +1,8 @@
 <h1>All Students</h1>
 <% @students.each do |student| %>
-  <%= student.name %>
+  <div id="student-<%= student.id %>" >
+    <%= student.name %>
+    <%= button_to "Edit", edit_student_path(student) %>
+    <%= button_to "Delete", student_path(student), method: "delete" %>
+  </div>
 <% end %>

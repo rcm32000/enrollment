@@ -39,6 +39,14 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    student = Student.find(params[:id])
+    student.destroy
+
+    flash[:success] = "#{student.name} was successfully expelled!"
+    redirect_to students_path
+  end
+
   private
 
   def student_params
