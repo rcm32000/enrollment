@@ -10,12 +10,12 @@ describe 'User can' do
                                         zip: 94024)
 
     visit new_student_address_path(student)
-save_and_open_page
-    fill_in :description, with: address.description
-    fill_in :street, with: address.street
-    fill_in :city, with: address.city
-    fill_in :state, with: address.state
-    fill_in :zip, with: address.zip
+
+    fill_in :address_description, with: address.description
+    fill_in :address_street, with: address.street
+    fill_in :address_city, with: address.city
+    fill_in :address_state, with: address.state
+    fill_in :address_zip, with: address.zip
     click_button 'Save'
 
     expect(current_path).to eq(student_path(student))
