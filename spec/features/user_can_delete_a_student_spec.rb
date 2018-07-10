@@ -8,13 +8,12 @@ describe 'User can' do
 
     visit students_path
     within '#student-2' do
-      save_and_open_page
       click_button 'Delete'
     end
 
     expect(current_path).to eq('/students')
     expect(page).to have_content(student1.name)
-    expect(page).to_not have_content(student2.name)
+    expect(page).to have_content("#{student2.name} was successfully expelled")
     expect(page).to have_content(student3.name)
   end
 end
