@@ -6,10 +6,10 @@ describe 'User can' do
 
     visit new_student_path
 
-    fill_in :name, with: name
+    fill_in :student_name, with: name
     click_button 'Enroll'
 
-    expect(current_path).to eq("/students/#{student.id}")
+    expect(current_path).to eq("/students/#{Student.last.id}")
     expect(page).to have_content(name)
   end
 end
