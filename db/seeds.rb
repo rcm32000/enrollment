@@ -13,7 +13,7 @@ DESCRIPTIONS = %w[Summer Home, Permanent Address, Skiing Vacation, Recovery Retr
 STREETS = %w[Main, Market, 17th, Cynthia, Homestead, El Camino, Parker, Mississippi, California]
 CITIES = %w[Los Altos, Sunnyvale, Cupertino, Boise, Fresno, Thornton, Aurora, Denver, San Jose, New York]
 STATES = %w[CA, ID, CO, NY, FL, WA, ME, AL, HI]
-ZIPS = %w[80012, 94024, 73849, 23874, 01928]
+ZIPS = [80012, 94024, 73849, 23874, 01928]
 
 STUDENTS.each do |name|
   student = Student.create!(name: name)
