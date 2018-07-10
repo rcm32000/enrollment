@@ -6,7 +6,7 @@ describe 'User can see' do
 
     visit student_path(student)
 
-    expect(current_path).to eq("/student/#{student.id}")
-    expect(page).to have_content('Dexter')
+    expect(current_path).to eq("/students/#{student.id}")
+    expect(page).to have_content(student.name)
   end
 end
