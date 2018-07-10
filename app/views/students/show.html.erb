@@ -3,3 +3,6 @@
 
 <h1>Student Name</h1>
 <%= @student.name %>
+
+<%= render partial: 'addresses/form' %>
+<%= render partial: 'students/address', collection: @student.addresses %>
