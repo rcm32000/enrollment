@@ -11,15 +11,18 @@ describe 'User can' do
 
     visit new_student_address_path(student)
 
-    fill_in :student_name, with: new_name
-    fill_in :student_name, with: new_name
-    fill_in :student_name, with: new_name
-    fill_in :student_name, with: new_name
-    fill_in :student_name, with: new_name
+    fill_in :description, with: address.description
+    fill_in :street, with: address.street
+    fill_in :city, with: address.city
+    fill_in :state, with: address.state
+    fill_in :zip, with: address.zip
     click_button 'Save'
 
-    expect(current_path).to eq("/students/#{student.id}")
-    expect(page).to have_content(new_name)
-    expect(page).to_not have_content(student.name)
+    expect(current_path).to eq(student_path(student))
+    expect(page).to have_content(address.description)
+    expect(page).to have_content(address.street)
+    expect(page).to have_content(address.city)
+    expect(page).to have_content(address.state)
+    expect(page).to have_content(address.zip)
   end
 end

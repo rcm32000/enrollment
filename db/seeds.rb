@@ -13,14 +13,14 @@ DESCRIPTIONS = %w[Summer Home, Permanent Address, Skiing Vacation, Recovery Retr
 STREETS = %w[Main, Market, 17th, Cynthia, Homestead, El Camino, Parker, Mississippi, California]
 CITIES = %w[Los Altos, Sunnyvale, Cupertino, Boise, Fresno, Thornton, Aurora, Denver, San Jose, New York]
 STATES = %w[CA, ID, CO, NY, FL, WA, ME, AL, HI]
-ZIPS = [80012, 94024, 73849, 23874, 01928]
+ZIPS = [80012, 94024, 73849, 23874, 10928]
 
 STUDENTS.each do |name|
   student = Student.create!(name: name)
   puts "Enrolled #{student.name}"
-  student.address.create!(description: DESCRIPTION.sample,
-                          street: STREETS.sample,
-                          city: CITIES.sample,
-                          state: STATES.sample,
-                          zip: ZIP.sample)
+  student.addresses.create!(description: DESCRIPTION.sample,
+                            street: STREETS.sample,
+                            city: CITIES.sample,
+                            state: STATES.sample,
+                            zip: ZIP.sample)
 end

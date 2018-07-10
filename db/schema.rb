@@ -13,11 +13,12 @@
 ActiveRecord::Schema.define(version: 20180710205059) do
 
   create_table "addresses", force: :cascade do |t|
+    t.integer "student_id"
     t.string "description"
     t.string "street"
     t.string "city"
     t.string "state"
-    t.string "zip"
+    t.integer "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
