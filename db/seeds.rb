@@ -10,16 +10,17 @@ Student.destroy_all
 
 STUDENTS = %w[Rob, Emmie, Dione, Eliot, Collin, Ian, Chris, John, Matt, Connor]
 DESCRIPTIONS = %w[Summer Home, Permanent Address, Skiing Vacation, Recovery Retreat]
-STREETS = %w[Main, ]
-CITIES = %w[]
-STATES = %w[]
-ZIPS = %w[]
+STREETS = %w[Main, Market, 17th, Cynthia, Homestead, El Camino, Parker, Mississippi, California]
+CITIES = %w[Los Altos, Sunnyvale, Cupertino, Boise, Fresno, Thornton, Aurora, Denver, San Jose, New York]
+STATES = %w[CA, ID, CO, NY, FL, WA, ME, AL, HI]
+ZIPS = %w[80012, 94024, 73849, 23874, 01928]
 
 STUDENTS.each do |name|
   student = Student.create!(name: name)
   puts "Enrolled #{student.name}"
-  10.times do |num|
-    student.address.create!(title: JOBS.sample, description: "What a great position!", level_of_interest: num + rand(100), city: CITIES.sample, category: CATEGORIES.sample)
-    puts "  Created #{company.jobs[num].title}"
-  end
+  student.address.create!(description: DESCRIPTION.sample,
+                          street: STREETS.sample,
+                          city: CITIES.sample,
+                          state: STATES.sample,
+                          zip: ZIP.sample)
 end

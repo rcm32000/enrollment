@@ -16,6 +16,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+test.sqlite3
+/coverage
 
 /node_modules
 /yarn-error.log
